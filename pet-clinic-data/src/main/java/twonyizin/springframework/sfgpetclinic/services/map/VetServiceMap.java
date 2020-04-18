@@ -4,8 +4,9 @@ import java.util.Set;
 
 import twonyizin.springframework.sfgpetclinic.model.Vet;
 import twonyizin.springframework.sfgpetclinic.services.CrudService;
+import twonyizin.springframework.sfgpetclinic.services.VetService;
 
-public class VetServiceMap  extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
+public class VetServiceMap  extends AbstractMapService<Vet, Long> implements VetService {
 	@Override
 	public Set<Vet> findAll() {
 		return super.findAll();
