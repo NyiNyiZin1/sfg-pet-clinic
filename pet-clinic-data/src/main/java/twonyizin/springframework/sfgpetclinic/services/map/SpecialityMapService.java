@@ -1,11 +1,11 @@
 package twonyizin.springframework.sfgpetclinic.services.map;
 
 import twonyizin.springframework.sfgpetclinic.model.Speciality;
-import twonyizin.springframework.sfgpetclinic.services.SpecialtiesService;
+import twonyizin.springframework.sfgpetclinic.services.SpecialtyService;
 
 import java.util.Set;
 
-public class SpecialityMapService extends AbstractMapService<Speciality,Long> implements SpecialtiesService {
+public class SpecialityMapService extends AbstractMapService<Speciality,Long> implements SpecialtyService {
     @Override
     public Set<Speciality> findAll() {
         return super.findAll();
