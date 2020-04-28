@@ -1,6 +1,8 @@
 package twonyizin.springframework.sfgpetclinic.model;
 
+import javax.persistence.Entity;
 import java.io.Serializable;
+
 
 public class BaseEntity implements Serializable {
     private Long id;
