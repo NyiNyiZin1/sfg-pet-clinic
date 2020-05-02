@@ -1,4 +1,7 @@
 package twonyizin.springframework.sfgpetclinic.repositories;
 
-public interface VisitRepository {
+import org.springframework.data.repository.CrudRepository;
+import twonyizin.springframework.sfgpetclinic.model.Visit;
+
+public interface VisitRepository extends CrudRepository<Visit,Long> {
 }

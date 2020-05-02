@@ -2,13 +2,11 @@ package twonyizin.springframework.sfgpetclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import twonyizin.springframework.sfgpetclinic.model.Owner;
-import twonyizin.springframework.sfgpetclinic.model.Pet;
-import twonyizin.springframework.sfgpetclinic.model.PetType;
-import twonyizin.springframework.sfgpetclinic.model.Vet;
+import twonyizin.springframework.sfgpetclinic.model.*;
 import twonyizin.springframework.sfgpetclinic.services.OwnerService;
 import twonyizin.springframework.sfgpetclinic.services.PetTypeService;
 import twonyizin.springframework.sfgpetclinic.services.VetService;
+import twonyizin.springframework.sfgpetclinic.services.VisitService;
 
 import java.time.LocalDate;
 
@@ -17,12 +15,14 @@ public class DataLoader implements CommandLineRunner {
 private final OwnerService ownerService;
 private final VetService vetService;
 private final PetTypeService petTypeService;
+private final VisitService visitService;
 
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -64,6 +64,12 @@ private final PetTypeService petTypeService;
         fionasCat.setPetType(savedCatPetType);
         owner2.getPets().add(fionasCat);
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneeze Kitty");
+        visitService.save(catVisit);
 
         System.err.println("Loaded Owners....");
 
