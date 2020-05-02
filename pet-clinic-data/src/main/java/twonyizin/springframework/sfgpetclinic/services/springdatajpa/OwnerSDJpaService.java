@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Profile("springdatajpa")//conflit OnwerServiceMap.java becauser the same implements OwnerService
+@Profile("springdatajpa")//conflit OnwerMapService.java becauser the same implements OwnerService
 public class OwnerSDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
