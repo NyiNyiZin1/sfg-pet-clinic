@@ -29,6 +29,9 @@ public class SpecialitySDJpaService implements SpecialtyService {
 
     @Override
     public Speciality save(Speciality object) {
+        System.err.println("#########################");
+        System.err.println("default service");
+        System.err.println("#########################");
         return specialityRepository.save(object);
     }
 

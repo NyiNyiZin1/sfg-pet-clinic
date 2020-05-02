@@ -2,6 +2,7 @@ package twonyizin.springframework.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import twonyizin.springframework.sfgpetclinic.model.Owner;
 import twonyizin.springframework.sfgpetclinic.model.Pet;
@@ -10,6 +11,7 @@ import twonyizin.springframework.sfgpetclinic.services.PetService;
 import twonyizin.springframework.sfgpetclinic.services.PetTypeService;
 
 @Service
+@Profile({"default","map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 private final PetTypeService petTypeService;
 private final PetService petService;

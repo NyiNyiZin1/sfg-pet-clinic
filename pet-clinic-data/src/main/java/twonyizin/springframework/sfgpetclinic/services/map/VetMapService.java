@@ -2,11 +2,13 @@ package twonyizin.springframework.sfgpetclinic.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import twonyizin.springframework.sfgpetclinic.model.Vet;
 import twonyizin.springframework.sfgpetclinic.services.CrudService;
 import twonyizin.springframework.sfgpetclinic.services.VetService;
 @Service
+@Profile({"default","map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 	@Override
 	public Set<Vet> findAll() {
