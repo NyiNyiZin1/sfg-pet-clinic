@@ -1,5 +1,6 @@
 package twonyizin.springframework.sfgpetclinic.services.map;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.context.annotation.Profile;
@@ -34,6 +35,11 @@ private final PetService petService;
 				.filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
 				.findFirst()
 				.orElse(null);
+	}
+
+	@Override
+	public List<Owner> findByLastNameLike(String lastName) {
+		return null;
 	}
 
 	@Override
